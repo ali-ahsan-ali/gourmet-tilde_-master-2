@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="POST">
+    <h2>Sides:</h2>
+    {% for x in inv.inventory %}
+
+
+    {% if x.item_type == "side" %}
+
+
+    {{x.name}} of price {{x.price}} per {{x.unit_of_measurement}} unit<br>
+
+    {% if values.get("BUY {} of {} size".format(x.name, x.unit_of_measurement), None) == "small"%}
+
+    Select the amount of units you want <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size"
+        value="small" checked="checked"> Small
+    <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size" value="medium"> Medium
+    <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size" value="large">Large<br>
+
+    {% elif values.get("BUY {} of {} size".format(x.name, x.unit_of_measurement), None) == "medium"%}
+
+    Select the amount of units you want <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size"
+        value="small" checked="checked"> Small
+    <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size" value="medium" checked="checked"> Medium
+    <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size" value="large">Large<br>
+
+    {% elif values.get("BUY {} of {} size".format(x.name, x.unit_of_measurement), None) == "large"%}
+
+    Select the amount of units you want <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size"
+        value="small" checked="checked"> Small
+    <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size" value="medium"> Medium
+    <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size" value="large"
+        checked="checked">Large<br>
+    {% else %}
+    Select the amount of units you want <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size"
+        value="small"> Small
+    <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size" value="medium"> Medium
+    <input type="radio" name="BUY {{x.name}} of {{x.unit_of_measurement}} size" value="large">Large<br>
+    {% endif %}
+
+    {% if values.get("BUY {} of {} num".format(x.name, x.unit_of_measurement), None) != ""%}
+    Enter the amount of this specific size and side you want: <input type="number"
+        name="BUY {{x.name}} of {{x.unit_of_measurement}} num"
+        value={{values.get("BUY {} of {} num".format(x.name,x.unit_of_measurement), None)}}><br><br>
+    {% else %}
+    Enter the amount of this specific size and side you want:
+    <input type="number" name="BUY {{x.name}} of {{x.unit_of_measurement}} num"
+        value="BUY {{x.name}} of {{x.unit_of_measurement}} num"><br><br>
+    {% endif %}
+
+
+    {% endif %}
+
+
+    {% endfor %} <br>
+
+    <font size="3" color="red">
+        {% for x in errors%}
+        {{x}}<br>
+        {%endfor%}
+    </font><br>
+
+    <input type="submit" value="ADD SIDE"><br>
+</form>
+
+
+
+{% endblock %}

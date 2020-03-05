@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="POST">
+    <a href="{{ url_for('inventory') }}">Back to Inventory</a>
+    <h1>REMOVE ITEMS</h1>
+    <h1>Current Inventory:</h1>
+
+    <h2>Mains:</h2>
+    <h4>Buns/Wraps</h4>
+    <b>Buns:</b> <br>
+    {% for x in inv.inventory %}
+    {% if x.item_type == "bun" %}
+    {{inv.get_item_quantity(x)}} x {{x}} <br>
+    <input type="checkbox" name="REMOVE {{x.name}}" value="EDIT {{x.name}}"> Remove {{x.name}} from inventory?<br><br>
+    {% endif %}
+    {% endfor %} <br>
+
+    <br><b>Wraps:</b> <br>
+    {% for x in inv.inventory %}
+    {% if x.item_type == "wrap" %}
+    {{inv.get_item_quantity(x)}} x {{x}}<br>
+    <input type="checkbox" name="REMOVE {{x.name}}" value="EDIT {{x.name}}"> Remove {{x.name}} from inventory?<br><br>
+    {% endif %}
+    {% endfor %} 
+
+    <h4>Meats</h4>
+    {% for x in inv.inventory %}
+    {% if x.item_type == "meat" %}
+    {{inv.get_item_quantity(x)}} x {{x}}<br>
+    <input type="checkbox" name="REMOVE {{x.name}}" value="EDIT {{x.name}}"> Remove {{x.name}} from inventory?<br><br>
+    {% endif %}
+    {% endfor %} <br>
+
+    <h4>Salads/Sauces</h4>
+    {% for x in inv.inventory %}
+    {% if x.item_type == "ingredient" %}
+    {{inv.get_item_quantity(x)}} x {{x}}<br>
+    <input type="checkbox" name="REMOVE {{x.name}}" value="EDIT {{x.name}}"> Remove {{x.name}} from inventory?<br><br>
+    {% endif %}
+    {% endfor %} <br>
+
+
+
+    {# this line below just used to see how inv prints #}
+    {# {{inv}}<br> #}
+
+    <h2>Sides:</h2>
+    {% for x in inv.inventory %}
+    {% if x.item_type == "side" %}
+    {{inv.get_item_quantity(x)}} x {{x}}<br>
+    <input type="checkbox" name="REMOVE {{x.name}}" value="EDIT {{x.name}}"> Remove {{x.name}} from inventory?<br><br>
+    {% endif %}
+    {% endfor %} <br>
+
+    <h2>Drinks:</h2>
+    {% for x in inv.inventory %}
+    {% if x.item_type == "drink" %}
+    {{inv.get_item_quantity(x)}} x {{x}}<br>
+    <input type="checkbox" name="REMOVE {{x.name}}" value="EDIT {{x.name}}"> Remove {{x.name}} from inventory?<br><br>
+    {% endif %}
+    {% endfor %} <br>
+
+    
+    <br><br>
+    <input type="submit" name="REMOVE SELECTED ITEMS" value="REMOVE">
+
+</form>
+{% endblock %}

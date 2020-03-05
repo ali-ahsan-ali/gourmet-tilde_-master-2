@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Current Orders</h1>
+<br>
+<form method="POST">
+    {% for order_id, order in order_id.items() %}
+    {% if order.status == "In Progress" %}
+    Order ID: {{order_id}}<br>
+    Order: {{order}}<br><br>
+    <input type="submit" name="Complete Order {{order_id}}" value="Complete Order {{order_id}}"><br>
+    {% elif order.status == "Finished" %}
+    Order ID: {{order_id}}<br>
+    Order:{{order}}<br><br>
+    <input type="submit" name="Picked up! {{order_id}}" value="Picked Up {{order_id}}"><br>
+    {% endif %}
+
+    {% endfor %}
+</form>
+{% endblock %}

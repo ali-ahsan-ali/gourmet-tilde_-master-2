@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Order Confirmation!</h1>
+<h2>Order ID:{{order_id}}</h2>
+
+<h3>Customer name: {{customer}}</h3>
+<h3>Order Status: {{status}}</h3>
+
+<h3>Mains:</h3>
+{% for x in mains %}
+<h7>{{x}}</h7>
+{% endfor %}<br>
+
+<h3>Sides:</h3>
+{% for x in sides %}
+<h7>{{x}}</h7>
+{% endfor %}<br>
+
+<h3>Drinks:</h3>
+{% for x in drinks %}
+<h7>{{x}}</h7>
+{% endfor %}<br>
+
+<h3>Price:</h3>
+<h7>${{price}}</h7>
+<br><br>
+
+{% endblock %}

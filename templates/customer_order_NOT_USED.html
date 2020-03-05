@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="POST">
+    <h1>MAIN</h1>
+    Main Type: <br>
+    <input type="radio" name="burger_or_wrap" value="Burger"> Burger
+    <input type="radio" name="burger_or_wrap" value="Wrap"> Wrap<br>
+
+    Bun Type: <br>
+    <input type="radio" name="bun_wrap_type" value="Potato Bun"> Potato Bun
+    <input type="radio" name="bun_wrap_type" value="Sesame Bun"> Sesame Bun
+    <input type="radio" name="bun_wrap_type" value="Muffin Bun"> Muffin Bun
+    <input type="radio" name="bun_wrap_type" value="Tortilla"> Tortilla<br>
+
+    Number of Buns/Wrap: <input type="number" name="bun_wrap_num" placeholder="Select a number"><br>
+
+    Meat type: <br>
+    <input type="radio" name="meat_filling" value="Beef"> Beef
+    <input type="radio" name="meat_filling" value="Chicken"> Chicken
+    <input type="radio" name="meat_filling" value="Lamb"> Lamb<br>
+
+    Number of meat filling: <input type="number" name="meat_num" placeholder="Select a number"><br>
+    Ingredients:<br>
+    <input type="radio" name="tomato" value="tomato"> Tomato
+    <input type="radio" name="lettuce" value="lettuce"> Lettuce
+    <input type="radio" name="onion" value="onion"> Onion
+    <input type="radio" name="mayo" value="mayo"> Mayonaise<br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>SIDE</h1>
+    <input type="radio" name="Fries" value="Fries"> Fries<br>
+    <input type="radio" name="fries_size" value="Large"> Large(50 units)
+    <input type="radio" name="fries_size" value="Medium"> Medium(35 units)
+    <input type="radio" name="fries_size" value="Small"> Small(20 units)<br>
+    Number of fries: <input type="number" name="fries_num" placeholder="Select a number"><br><br><br>
+
+
+    <input type="radio" name="Salad" value="Salad"> Salad (1 Bowl)<br>
+    Number of salads: <input type="number" name="salad_num" placeholder="Select a numbers"><br><br><br>
+
+    <input type="radio" name="Sundae" value="Sundae"> Sundae<br>
+    <input type="radio" name="sundae_size" value="Large"> Large (3 scoops)
+    <input type="radio" name="sundae_size" value="Medium"> Medium (2 scoops)
+    <input type="radio" name="sundae_size" value="Small"> Small (1 scoop)<br>
+    Number of sundae: <input type="number" name="side" placeholder="Select a number"><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>DRINKS</h1>
+    <input type="radio" name="CocaCola" value="CocaCola"> CocaCola<br>
+    <input type="radio" name="CocaCola_size" value="Large"> Large (1L)
+    <input type="radio" name="CocaCola_size" value="Medium"> Medium (600ml)
+    <input type="radio" name="CocaCola_size" value="Small"> Small (375ml) <br>
+    Number of drinks: <input type="number" name="CocaCola_num" placeholder="Select a number"><br><br><br>
+
+
+    <input type="radio" name="Fanta" value="Fanta"> Fanta<br>
+    <input type="radio" name="Fanta_size" value="Large"> Large (1L)
+    <input type="radio" name="Fanta_size" value="Medium"> Medium (600ml)
+    <input type="radio" name="Fanta_size" value="Small"> Small (375ml) <br>
+    Number of drinks: <input type="number" name="Fanta_num" placeholder="Select a number"><br><br><br>
+
+    <input type="radio" name="Sprite" value="Sprite"> Sprite<br>
+    <input type="radio" name="Sprite_size" value="Large"> Large (1L)
+    <input type="radio" name="Sprite_size" value="Medium"> Medium (600ml)
+    <input type="radio" name="Sprite_size" value="Small"> Small (375ml) <br>
+    Number of drinks: <input type="number" name="Sprite_num" placeholder="Select a number"><br><br><br>
+
+    <input type="radio" name="Solo" value="Solo"> Solo<br>
+    <input type="radio" name="Solo_size" value="Large"> Large (1L)
+    <input type="radio" name="Solo_size" value="Medium"> Medium (600ml)
+    <input type="radio" name="Solo_size" value="Small"> Small (375ml) <br>
+    Number of drinks: <input type="number" name="Solo_num" placeholder="Select a number"><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="submit" value="CHECK ORDER">
+</form>
+
+
+
+
+{% endblock %}

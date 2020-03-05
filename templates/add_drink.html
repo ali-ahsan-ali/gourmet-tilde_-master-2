@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<form action="" method="POST">
+    <h2>Drinks:</h2>
+
+    {% for x in inv.inventory %}
+    {% if x.item_type == "drink" %}
+    {% if values.get("BUY {} of {}".format(x.name, x.unit_of_measurement), None) != ""%}
+
+    Enter a number to buy a {{x.name}} of price {{x.price}} and in {{x.unit_of_measurement}} units<input type="number"
+        name="BUY {{x.name}} of {{x.unit_of_measurement}}"
+        value={{values.get("BUY {} of {}".format(x.name, x.unit_of_measurement), None)}}><br><br>
+    {% else %}
+    Enter a number to buy a {{x.name}} of price {{x.price}} and in {{x.unit_of_measurement}} units<input type="number"
+        name="BUY {{x.name}} of {{x.unit_of_measurement}}" value="BUY {{x.name}} of {{x.unit_of_measurement}}"><br><br>
+    {% endif %}
+
+
+    {% endif %}
+    {% endfor %} <br>
+
+    <font size="3" color="red">
+        {% for x in errors%}
+        {{x}}<br>
+        {%endfor%}
+    </font><br>
+    <input type="submit" value="ADD DRINKS"><br>
+
+</form>
+{% endblock %}

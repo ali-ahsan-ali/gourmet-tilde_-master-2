@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="POST">
+    <h1>MAIN</h1>
+    {% if values.get("burger_or_wrap", None) == "Burger" %}
+    <input type="radio" name="burger_or_wrap" value="Burger" required checked="checked"> Burger
+    <input type="radio" name="burger_or_wrap" value="Wrap"> Wrap<br><br>
+    {% elif values.get("burger_or_wrap", None) == "Wrap" %}
+    <input type="radio" name="burger_or_wrap" value="Burger" required> Burger
+    <input type="radio" name="burger_or_wrap" value="Wrap" checked="checked"> Wrap<br><br>
+    {% else %}
+    <input type="radio" name="burger_or_wrap" value="Burger" required> Burger
+    <input type="radio" name="burger_or_wrap" value="Wrap"> Wrap<br><br>
+    {% endif %}
+
+
+    <b>Buns or Wraps:</b> <br><br>
+    {% for x in inv.inventory %}
+
+
+    {% if x.item_type == "bun" or x.item_type == "wrap" %}
+
+    {% if values.get("bun_wrap_type", None) == x.name %}
+    <input type="radio" name="bun_wrap_type" value="{{x.name}}" required checked="checked"> {{x.name}}<br>
+    {% else %}
+    <input type="radio" name="bun_wrap_type" value="{{x.name}}" required> {{x.name}}<br>
+    {% endif %}
+
+
+    Enter a number to buy a {{x.name}} of price {{x.price}} and in {{x.unit_of_measurement}} units and used as a
+    {{x.item_type}}
+    {% if values.get("bun_wrap_num", None) != '' and values.get("bun_wrap_type", None) == x.name%}
+    <input type="number" name="bun_wrap_num{{x.name}}" value={{values.get("bun_wrap_num", None)}}><br><br>
+    {% else %}
+    <input type="number" name="bun_wrap_num{{x.name}}" value="BUY {{x.name}} of {{x.unit_of_measurement}}"><br><br>
+    {% endif %}
+
+
+    {% endif %}
+
+
+    {% endfor %} <br>
+    <h4>Meats</h4>
+
+
+    {% for x in inv.inventory %}
+    {% if x.item_type == "meat" %}
+
+    {% if values.get("meat_filling", None) == x.name %}
+    <input type="radio" name="meat_filling" value="{{x.name}}" checked="checked"> {{x.name}}<br>
+    {% else %}
+    <input type="radio" name="meat_filling" value="{{x.name}}"> {{x.name}}<br>
+    {% endif %}
+
+    {% if values.get("meat_num{}".format(x.name), None) != '' %}
+    Enter a number to buy a {{x.name}} of price {{x.price}} and in {{x.unit_of_measurement}} units
+    <input type="number" name="meat_num{{x.name}}" value={{values.get("meat_num{}".format(x.name), None)}}><br><br>
+    {% else %}
+    Enter a number to buy a {{x.name}} of price {{x.price}} and in {{x.unit_of_measurement}} units
+    <input type="number" name="meat_num{{x.name}}"><br><br>
+    {% endif %}
+
+    {% endif %}
+
+    {% endfor %} <br>
+
+
+    <h4>Ingredients</h4>
+    {% for x in inv.inventory %}
+
+    {% if x.item_type == "ingredient" %}
+    {% if values.get(x.name, None) == x.name %}
+    Add a {{x.name}} of price {{x.price}} and in {{x.unit_of_measurement}} units
+    <input type="radio" name="{{x.name}}{{x.unit_of_measurement}}" checked="checked"><br>
+    {% else %}
+    Add a {{x.name}} of price {{x.price}} and in {{x.unit_of_measurement}} units
+    <input type="radio" name="{{x.name}}{{x.unit_of_measurement}}"><br>
+    {% endif %}
+
+    {% endif %}
+
+    {% endfor %} <br>
+
+    <font size="3" color="red">
+        {% for x in errors%}
+        {{x}}<br>
+        {%endfor%}
+    </font><br>
+
+    <input type="submit" value="ADD MAIN"><br>
+
+
+
+</form>
+
+{% endblock %}

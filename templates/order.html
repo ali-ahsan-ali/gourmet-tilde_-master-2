@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Order as Customer</h1>
+<form method="POST">
+    <input type="submit" name="ADD MAIN" value="ADD MAIN">
+    <input type="submit" name="ADD SIDE" value="ADD SIDE">
+    <input type="submit" name="ADD DRINK" value="ADD DRINK"><br>
+    <br>
+    Current Order: 
+    <br>
+    <br>
+
+    Mains:<br>
+    {% for x in main %}
+    {{x}}<br>
+    {% endfor %}<br>
+
+    Sides:<br>
+    {% for x in side %}
+    {{x}}<br>
+    {% endfor %}<br>
+
+    Drinks:<br>
+    {% for x in drink %}
+    {{x}}<br>
+    {% endfor %}<br>
+
+    Current Order Price: ${{price}}<br>
+    <br><br>
+    <input type="submit" name="CHECK ORDER" value="Continue">
+
+</form>
+{% endblock %}

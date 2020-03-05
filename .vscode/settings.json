@@ -1,0 +1,5 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "yapf",
+    "python.pythonPath": "venv/bin/python3.7"
+}

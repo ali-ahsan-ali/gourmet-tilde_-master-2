@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="POST">
+    <a href="{{ url_for('inventory') }}">Back to Inventory</a>
+    <h1>NEW ITEM</h1>
+
+    Name: <br>
+    
+    <input type="text" name="name" value="Name"> <br><br>
+    
+
+    
+    Units: <br>
+    {% if values.get('meat_filling',"") == "" %}
+    <input type="radio" name="Units" value="single"> Single <br>
+    <input type="radio" name="Units" value="single leaf"> Single Leaf<br>
+    <input type="radio" name="Units" value="bowl"> Bowl<br>
+    <input type="radio" name="Units" value="scoop"> Scoop <br>
+    <input type="radio" name="Units" value="350mL"> 350mL can<br>
+    <input type="radio" name="Units" value="600mL"> 600mL bottle<br>
+    {% elif values.get('meat_filling',"") == "single" %}
+    <input type="radio" name="Units" value="single"> Single <br>
+    <input type="radio" name="Units" value="single leaf"> Single Leaf<br>
+    <input type="radio" name="Units" value="bowl"> Bowl<br>
+    <input type="radio" name="Units" value="scoop"> Scoop <br>
+    <input type="radio" name="Units" value="350mL"> 350mL can<br>
+    <input type="radio" name="Units" value="600mL"> 600mL bottle<br>
+    {% elif values.get('meat_filling',"") == "single leaf "%}
+    <input type="radio" name="Units" value="single"> Single <br>
+    <input type="radio" name="Units" value="single leaf"> Single Leaf<br>
+    <input type="radio" name="Units" value="bowl"> Bowl<br>
+    <input type="radio" name="Units" value="scoop"> Scoop <br>
+    <input type="radio" name="Units" value="350mL"> 350mL can<br>
+    <input type="radio" name="Units" value="600mL"> 600mL bottle<br>
+    {% elif values.get('meat_filling',"") == "bowl" %}
+    <input type="radio" name="Units" value="single"> Single <br>
+    <input type="radio" name="Units" value="single leaf"> Single Leaf<br>
+    <input type="radio" name="Units" value="bowl"> Bowl<br>
+    <input type="radio" name="Units" value="scoop"> Scoop <br>
+    <input type="radio" name="Units" value="350mL"> 350mL can<br>
+    <input type="radio" name="Units" value="600mL"> 600mL bottle<br>
+    {% elif values.get('meat_filling',"") == "scoop" %}
+    <input type="radio" name="Units" value="single"> Single <br>
+    <input type="radio" name="Units" value="single leaf"> Single Leaf<br>
+    <input type="radio" name="Units" value="bowl"> Bowl<br>
+    <input type="radio" name="Units" value="scoop"> Scoop <br>
+    <input type="radio" name="Units" value="350mL"> 350mL can<br>
+    <input type="radio" name="Units" value="600mL"> 600mL bottle<br>
+    {% elif values.get('meat_filling',"") == "350mL"%}
+    <input type="radio" name="Units" value="single"> Single <br>
+    <input type="radio" name="Units" value="single leaf"> Single Leaf<br>
+    <input type="radio" name="Units" value="bowl"> Bowl<br>
+    <input type="radio" name="Units" value="scoop"> Scoop <br>
+    <input type="radio" name="Units" value="350mL"> 350mL can<br>
+    <input type="radio" name="Units" value="600mL"> 600mL bottle<br>
+    {% elif values.get('meat_filling',"") == "600 mL" %}
+    <input type="radio" name="Units" value="single"> Single <br>
+    <input type="radio" name="Units" value="single leaf"> Single Leaf<br>
+    <input type="radio" name="Units" value="bowl"> Bowl<br>
+    <input type="radio" name="Units" value="scoop"> Scoop <br>
+    <input type="radio" name="Units" value="350mL"> 350mL can<br>
+    <input type="radio" name="Units" value="600mL"> 600mL bottle<br>
+    {% endif %} <br>
+
+    Price: <br>
+    <input type="number" name="Price" value="Price"> <br><br>
+
+
+    Type: <br>
+
+    <input type="radio" name="Type" value="bun"> Bun (for Burgers) <br>
+    <input type="radio" name="Type" value="wrap"> Wrap <br>
+    <input type="radio" name="Type" value="meat"> Protein Source (patties for Burgers, fillings for Wraps) <br>
+    <input type="radio" name="Type" value="ingredient"> Ingredients for Main (ie. Lettuce, Mayo, Tomato...) <br>
+    <input type="radio" name="Type" value="side"> Side <br>
+    <input type="radio" name="Type" value="drink"> Drink<br>
+
+    <br>
+
+    
+    Quantity: <br>
+    <input type="number" name="Quantity" value="Quantity"> {{units}} <br><br>
+
+
+    <input type="submit" value="CREATE ITEM"><br>
+    
+</form>
+
+{% endblock %}
