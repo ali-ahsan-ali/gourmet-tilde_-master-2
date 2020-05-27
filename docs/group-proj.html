@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>group-proj.html</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="comp-1531-group-project-19t1">COMP 1531 Group Project, 19T1</h1>
+<h3 id="aims">Aims:</h3>
+<p>The aim of this group project is to enable students to consolidate their knowledge in the fundamental principles of Software Engineering and apply the theoretical concepts to a “hands-on” software engineering problem. The project will enable students to:</p>
+<ul>
+<li>
+<p>Develop problem-solving skills to solve ‘real-world’ software engineering problems; analyse the problem domain, design and develop a solution to the problem</p>
+</li>
+<li>
+<p>Learn to work effectively as part of a team by managing your project, planning, and allocation of responsibilities among the members of your team</p>
+</li>
+<li>
+<p>Gain experience in collaborating through the use of a source control</p>
+</li>
+<li>
+<p>Apply appropriate design practices and methodologies in the development of their solution</p>
+</li>
+</ul>
+<h3 id="due-dates">Due Dates:</h3>
+<ul>
+<li>
+<p>Milestone 1: 11:59 pm Sunday 10th March, end of Week 3<br>
+(Feedback: Week 4 Lab Session)</p>
+</li>
+<li>
+<p>Milestone 2: 11:59 pm Sunday 31st March, end of Week 6<br>
+(Demo to tutors and tutor feedback: Week 7 Lab)</p>
+</li>
+<li>
+<p>Milestone 3: 11:59 pm Sunday 21th April, end of Week 9<br>
+(Presentation to class: Week 10 Lab)</p>
+</li>
+<li>
+<p>Project Report and Moodle Peer assessment: 11:59 pm Sunday 28th April, end of Week 10</p>
+</li>
+</ul>
+<h3 id="value-25">Value: 25%</h3>
+<h1 id="background">Background</h1>
+<p>Your consultancy firm has been called in to Australia’s largest burger food chain <em>GourmetBurgers</em> for a new software project. The client is interested in developing an online self-service ordering application. The client feels that such a system would provide faster delivery of meals to customers, enable customers to build their own gourmet creations which would result in improving the revenue at the different franchises of the food chain.</p>
+<h1 id="preliminary-requirements">Preliminary Requirements</h1>
+<p>The online application offers three types of services:</p>
+<ol>
+<li>Customers - Place Online Orders</li>
+<li>Staff - Service Online Orders</li>
+<li>Staff - Maintain Inventory</li>
+</ol>
+<h3 id="customer---online-orders">1. Customer - Online Orders</h3>
+<p><strong>Mains</strong><br>
+At any GourmetBurger outlet, a customer can create two types of mains, a <em>burger</em> or a <em>wrap</em> and order their gourmet creation. For each selected main, a customer can choose:</p>
+<ol>
+<li>type and number of buns (e.g., 3 sesame buns for a double burger or 2 muffin buns for a standard single burger) - the number of buns cannot exceed the maximum allowable limit (e.g., if only single, double and triple burgers are permitted, then the customer cannot choose more than 4 buns)</li>
+<li>type and number of patties (e.g., 2 chicken patties, vegetarian, beef). here again, customers are restricted to the maximum allowable patties</li>
+<li>other ingredients of their choice such as tomato, lettuce, tomato sauce, cheddar cheese, swiss cheese etc.<br>
+Each of the mains (burger or wrap) has a base price, and each ingredient carries an additional price, so once a customer has completed their gourmet creation, the net price of their created main will be calculated based on the chosen ingredients and displayed to the customer.</li>
+</ol>
+<p><strong>Sides and Drinks</strong><br>
+Besides the main, a customer can optionally order sides (e.g., a 6 pack nuggets, 3 pack nuggets, fries (small, medium, large)) and drink(s) of their choice.</p>
+<p>Once, a customer has completed their selection (main, side and drink), they can checkout to complete their order. At this point, they will be issued with an order-id. At any point in time, the customer should be able to check if their order is ready to be collected using their order-id. The customer can check the status of their order at any point to see if their order is completed.</p>
+<h3 id="staff---service-orders">2. Staff - Service Orders</h3>
+<p>The staff can view the current orders at any point in time. Once a customer’s order has been cooked, they will update the status of the order to indicate that the order is available for pickup by the customer. The customer should be able to see this change in status at their end when they refresh their page. This order will now disappear from staff orders menu.</p>
+<h3 id="staff---maintain-inventory">3. Staff - Maintain Inventory</h3>
+<p>Staff will also be responsible for maintaining the inventory of their various ingredients. Periodically, they will refill their stock. As a customer places an order (e.g. a double burger with 2 chicken patties and cheddar cheese) will result in the inventory levels being decremented accordingly. At any point in time, if a particular ingredient is not available, the customer will not be able to select the particular item to their order.<br>
+Burgers, wraps, nuggets are all stocked in whole quantities.<br>
+Bottled drinks are stocked in either cans (375 ml) or bottles (600 ml) and drinks such as orange juice will be served in varying sizes (e.g., a small = 250 ml, a medium = 450 ml etc).<br>
+Sides such as fries will need to be stocked by weight (in gms). For example, a small fries = 75g, a medium fries = 125 g and if a customer orders a medium fries, this would reduce the inventory levels by 125g.</p>
+<h1 id="group-project-requirements">Group Project Requirements</h1>
+<h2 id="team-registration">Team Registration</h2>
+<p>For this project, you will need to organise yourself into teams of 3 (no more than 3), and all the team members must be from the same lab session. You will do this under the guidance of your tutor in the week 2 lab. While they will try to accommodate your preferences for teammates, they may have to make adjustments to ensure teams have 3 members.</p>
+<p>Once your team has been formed one member from the team will need to register it:</p>
+<ol>
+<li>Go to <a href="https://cgi.cse.unsw.edu.au/~cs1531/github/run.cgi/login">https://cgi.cse.unsw.edu.au/~cs1531/github/run.cgi/login</a> and sign in</li>
+<li>Click on the <strong>Teams</strong> button. This will show you a form that you must fill out</li>
+<li>Select your tutorial from the left drop-down menu and think of a team name (do NOT use any emojis or similar special characters)</li>
+<li>Click <strong>Create</strong></li>
+<li>Follow the link in the notification to add your other team members. This will create a team within the cs1531 GitHub organisation.</li>
+</ol>
+<p>Please ensure that your team is registered by end of week 2.</p>
+<h2 id="creation-of-team-repository">Creation of Team Repository</h2>
+<p>Each team will need to create a repository to collaborate on their group project. One member from the team…</p>
+<ul>
+<li>
+<p>Go to <a href="https://cgi.cse.unsw.edu.au/~cs1531/github/run.cgi/login">https://cgi.cse.unsw.edu.au/~cs1531/github/run.cgi/login</a> and sign in</p>
+</li>
+<li>
+<p>Click on the ‘Group Project’ button.</p>
+</li>
+<li>
+<p>Select your tutorial group (on the left drop-down menu) and your team (on the right drop-down menu)</p>
+</li>
+<li>
+<p>Click on Import</p>
+</li>
+</ul>
+<p>This will create a private repository under your team with a file <code>readme.md</code> and a default <code>.gitignore</code> file to enable you to list files and folders that can be ignored and never committed to the repository, for example your python virtual environment.</p>
+<h2 id="implementation-guidelines">Implementation Guidelines</h2>
+<ul>
+<li>
+<p>Keeping mind that an Agile Software Development style has been chosen for this project, your team will be required to build and deliver the project in iterations. Each iteration will deliver a part of the requirements of the project during which the team members are expected to carry out all the SDLC activities, namely analysis, design, coding and testing. At the end of the iteration, you (as a team) will demonstrate to your lab class the functionality implemented during that iteration cycle. Your team must bear in mind that project requirements may be subject to change and enhancements to functionalities may be made at the end of the iteration. You will need to carefully design the solution for your current iteration, such that the solution is extensible to accommodate these changes. Deliverable for each iteration will be outlined at the start of each iteration cycle.</p>
+</li>
+<li>
+<p>For this project, no sophisticated authentication is required to be implemented. When the URL of the online app is specified, e.g., [<a href="http://localhost:8080/">http://localhost:8080/</a>], this should launch a dashboard that prompts the user to order a mains, side or drink</p>
+</li>
+<li>
+<p>Any kind of persistence mechanism may be used (e.g., Python’s <strong>pickle</strong>) to store the inventory items <a href="https://www.youtube.com/watch?v=7-jq9MM54Lc&amp;list=PLbSaCpDlfd6p1h87LKUWDa7TBGQhLYQXW&amp;index=11">Watch: File I/O, Text, CSV, Pickle</a></p>
+</li>
+<li>
+<p>This project must be designed using <strong>object-oriented design</strong> principles and implemented using <strong>Python/Flask/Jinja2</strong>. It is recommended that students build their front-end using HTML and CSS only. No other CSS frameworks (e.g. Material CSS, Bootstrap, etc.) to be used for building the UI of the application.</p>
+</li>
+<li>
+<p>What has been provided to you is a problem statement; a set of high-level requirements from the customer. Your team must analyse the problem statement and go through a process of eliciting more formal requirements to develop the final set of user-stories and acceptance tests. You will need to have a visioning exercise with your customer, to determine the complete range of burgers/wraps and ingredients available for selection to the customer along with any additional constraints to orders.This must be elicited as part of your requirements analysis.</p>
+</li>
+<li>
+<p>The model solution demonstrated in the lectures was only a guide to demonstrate “one” possible way of implementing the customer’s requirements. You are required to design your solution and present in week 10.</p>
+</li>
+<li>
+<p>At the end of each deliverable (weeks 4, 7, &amp; 10) tutors will check the team’s GitHub repositories to ensure that all members of the team have contributed equally to the project and appropriate branches are created by each team member. There will additionally be an anonymous peer assessment among team members at the week end, where each team member has the opportunity to rate other team members for their contribution to the group project.</p>
+</li>
+</ul>
+<h2 id="log-book">Log Book</h2>
+<p>You are required to maintain a log book through the entire project that records:</p>
+<ul>
+<li>
+<p>date of regular, stand-up meetings</p>
+</li>
+<li>
+<p>summary of decisions made in stand-up meetings, requirements elicited and key design decisions (hand-written user-stories, CRC cards etc.)</p>
+</li>
+<li>
+<p>responsibilities allocated to each team member and tasks to be accomplished for the next meeting</p>
+</li>
+<li>
+<p>progress of tasks using a velocity chart (a hand-drawing will suffice, no sophisticated tool needed), summary of decisions made in stand-up meetings</p>
+</li>
+<li>
+<p>milestones achieved</p>
+</li>
+<li>
+<p>reflection if assigned tasks (decided from last meeting) have been achieved</p>
+</li>
+<li>
+<p>any obstacles</p>
+</li>
+</ul>
+<p>Marks will be awarded for the log book (in weeks 7 and 10 )</p>
+<p><strong>Assessment</strong></p>
+<p>You will be assessed on your ability to apply what you have learnt in this course as well as your ability to work in a team and produce a significant piece of software. In cases where the client has not been explicit in their requirements, you will need to make your own design decisions with your<br>
+team. It is important that you communicate regularly with your team members as well as document your design to avoid confusion about the choices you have made. You will keep a list of assumptions you have made and submit them as part of your final submission in your log book. You will also be asked to justify these decisions when you demonstrate in week 10.</p>
+<p>You are expected to use git appropriately by committing consistently and using <strong>feature branches</strong> to manage significant changes. It is an important part of this project for you (as a team) to manage your own time. You need to start early and work consistently: do not be overly optimistic about what you can achieve (remember you are all doing other courses with other assignments). It is essential for you as a team to monitor your own progress and it is often necessary to revise the plan as you progress.</p>
+<p>While it is up to you how to divide the work between you, all members must take on the developer role and work consistently throughout the project. (each team member must work equally on front-end and back-end functionality and testing).</p>
+<p><em><strong>Each team member generally receives the same mark, but if the peer assessment tool or the logs of your GitHub repository indicate an imbalance in the amount of work done, the total mark may be scaled to match actual contribution.</strong></em></p>
+<h2 id="group-project-scheduled-deliverables">Group Project Scheduled Deliverables</h2>
+<p>The planned dates for the different stages of the project deliverables are outlined below.</p>
+<ul>
+<li>Week 4 Lab Session: User Stories Submission (10%)</li>
+<li>Week 7 Lab Session: Demonstration of iteration 1 (40%)</li>
+<li>Week 10 Lab Session: Final Group Project Demonstration (50%)</li>
+</ul>
+<h3 id="week-4-lab-session-milestone-1-10-">Week 4 Lab Session: Milestone 1 (10 %)</h3>
+<p>Prior to your lab session, your team must schedule collaboration sessions, to have initial high-level visioning discussions during which you will brainstorm to identify epic stories from the customer requirements and their key features, break-down high-level user stories to smaller user-stories and detail each user story to identify key conditions of satisfaction, error-conditions etc. Based on the requirements analysisYour team is expected to produce a <strong>product backlog</strong> which contains:</p>
+<ol>
+<li>High Level <strong>Epic Stories</strong> from the problem statement</li>
+<li>Each epic story broken into <strong>user stories</strong> – Each user-story must define:
+<ul>
+<li>a unique story identifier (e.g., UC1)</li>
+<li>a short description of the feature based on the Role-Goal-Benefit template (Refer to the RGB model described in the lectures)</li>
+<li>an estimate for the implementation of the user story in user story points (e.g., UC1 = 2 User story points, where each point = 2.5 hours)</li>
+<li>priority of implementation</li>
+<li>acceptance criteria for each user story (Refer to the 3 C’s model described in the lectures)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Please note, the above artifacts will need to be submitted using GIVE by the end of week 3, Sunday 11:59 pm.</strong> The submission guidelines for for this milestone and a user-story template will be uploaded to webcms3.</p>
+<p><em><strong>Note: All members of the team must attend the lab to present their user-stories in order to receive a mark for this milestone. Any student who is unable to make the lab session due to unavoidable circumstance must notify me prior to the presentation with supporting documentation.</strong></em></p>
+<h3 id="week-7-lab-session-milestone-2--30-">Week 7 Lab Session: Milestone 2 ( 30% )</h3>
+<p>During this lab session, you will demonstrate the first iteration of your working software. For this iteration, you are required to implement only the <strong><code>back-end functionality</code></strong> of all the user-stories related to first two services, namely <strong><code>customers placing online orders</code></strong> and <strong><code>staff servicing orders</code></strong>.</p>
+<p>The task for your team is to <strong>select the necessary user-stories from the backlog of user-stories developed in week 4</strong> and implement them to meet the customer’s goals. You will demonstrate the working of your back-end software through running test-cases for each user-story. For this iteration, you are required to produce the following deliverable.</p>
+<ul>
+<li><strong><code>Source Code:</code></strong> The code you wish to submit for this milestone should be in a branch named <code>release</code>. Use the <code>master</code> branch as you would normally and <code>release</code> for when your application is stable. Avoid having commits in <code>release</code> that are not also in <code>master</code> (i.e. you should merge from <code>master</code> into <code>release</code>, not commit to it directly).</li>
+<li><strong><code>UML class diagram</code></strong></li>
+<li><strong><code>Log Book</code></strong></li>
+</ul>
+<p>More details about each of the above deliverable will be outlined later.</p>
+<h3 id="week-10-lab-session-milestone-3--60-">Week 10 Lab Session: Milestone 3 ( 60% )</h3>
+<p>For this iteration, you will need to <strong>update your product backlog</strong> based on <strong>changes made to the requirements</strong> by the customer (customer feedback and changes will be available following milestone 2) and complete all the user-stories in the updated product backlog. For this milestone, you will also be required to implement a front-end based on HTML/Flask/Jinja for your application. You will demonstrate your application to your tut group in Week 10. Details of necessary deliverable for this iteration will be outlined later.</p>
+<h3 id="peer-assessment">Peer assessment</h3>
+<p>To ensure fair allocation of marks, you are required to complete a form on Moodle where you specify how much each team member contributed to the project and any comments you have about them. Information on how you can access this form will be released closer to Week 11.</p>
+</div>
+</body>
+
+</html>
